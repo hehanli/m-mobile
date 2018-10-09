@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+   <script>
+       var a = {
+           user: 'hehanli',
+           fn: function( j, k , l){
+               console.log(this.user)
+               console.log(j, k , l); //10，1，2  bind方法也可以有多个参数，并且参数可以执行的时候再次添加，但是要注意的是，参数是按照形参的顺序进行的。
+           }
+       }
+       var b = a.fn;
+       var c = b.bind(a, 10); //bind方法返回的是一个修改过后的函数
+       c(1,2); //hehanli
+       console.log(c); // f(){console.log(this.user)} 
+
+
+       // 总结：call 和 apply 都是改变上下文中的this并立即执行这个函数，传参方法不同，apply方法传递的为数组
+       //   bind方法可以让对应的函数想什么时候调用就什么时候调用，并且可以将参数在执行的时候添加
+    </script> 
+</body>
+</html>

@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // some()方法  用于检测数组中的元素是否满足指定条件(函数提供)
+        // some()方法 会依次执行数组的每个元素
+        // 如果有一个元素满足条件，则表达式返回true，剩余的元素不会再执行检测
+        // 如果没有满足条件的元素，则返回false
+        //some() 不会对空数组进行检测
+        //some() 不会改变原始数组
+
+        //filter过()滤后返回一个新的数组，不直接对原数组进行操作
+        //some()检查后返回一个boolean值，判断数组中是否有满足的值
+        let a = [1,3,5]
+        let c = a.some((item) => {
+            return item > 3;
+        })
+        console.log('a', a); 
+        console.log('c', c) //true
+        let b = [1,4,6];
+        let f = b.filter((item) => {
+            return item > 1;
+        })
+        console.log('b', b); // [1, 4, 6]
+        console.log('f', f); // [4, 6]
+    </script>
+</body>
+</html>
